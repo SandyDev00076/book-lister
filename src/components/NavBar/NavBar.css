@@ -1,0 +1,71 @@
+.navbarcontainer {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* border-bottom: 1px solid grey; */
+    box-shadow: 0 0 5px grey;
+}
+
+.protitle {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: letter-spacing 0.25s;
+    color: cornflowerblue;
+    font-size: 2em;
+    cursor: default;
+}
+
+.protitle:hover {
+    letter-spacing: 5px;
+}
+
+.credits {
+    color: grey;
+    font-size: 0.4em;
+}
+
+.searchbook {
+    width: 30% !important;
+}
+
+.cart {
+    padding: 5px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    color: cornflowerblue;
+    cursor: pointer;
+    transition-property: background-color, color;
+    transition-duration: 0.25s;
+}
+
+.cart:hover {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+@media screen and (max-width: 700px) {
+    .navbarcontainer {
+        flex-direction: column;
+        height: max-content;
+    }
+    
+    .searchbook {
+        width: 90% !important;
+    }
+
+    .cart {
+        margin: 10px;
+    }
+
+    .protitle {
+        font-size: 1.4em;
+        padding: 20px;
+    }
+
+    .protitle:hover {
+        letter-spacing: 3px;
+    }
+}

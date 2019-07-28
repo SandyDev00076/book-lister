@@ -1,0 +1,162 @@
+.listcontainer {
+}
+
+.book {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px grey;
+    margin: 10px;
+    transition: box-shadow 0.25s;
+    cursor: default;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book:hover {
+    box-shadow: 0 0 10px grey;
+}
+
+.namingdetails {
+    width: 35%;
+}
+
+.booktitle {
+    font-size: 1.2em;
+    color: var(--title-color);
+}
+
+.authors {
+    color: cornflowerblue;
+}
+
+.language {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.7em;
+    border: 1px solid grey;
+    background-color: whitesmoke;
+    position: relative;
+    top: -5px;
+
+    transition-property: background-color, color;
+    transition-duration:  0.4s;
+}
+
+.language:hover {
+    background-color: #333;
+    color: white;
+}
+
+.ratingdetails {
+    width: 33%;
+    text-align: center;
+}
+
+.avgrating {
+    font-size: 1.5em;
+    color: grey;
+}
+
+.ratingcount {
+    font-size: 0.7em;
+    color: grey;
+}
+
+.pricingdetails {
+    width: 33%;
+    text-align: right;
+}
+
+.bookprice {
+    font-size: 2.5em;
+    color: green;
+    letter-spacing: 2px;
+}
+
+.cartfooter {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cartfooter > Button {
+    flex: 1;
+    margin: 5px;
+}
+
+.cartcount {
+    font-size: 1.3em;
+    color: blue;
+}
+
+.cartbook {
+    padding: 10px;
+    box-shadow: 0 0 5px grey;
+    border-radius: 5px;
+    margin: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartbookdetails {
+    width: 60%;
+}
+
+.cartbookauthors {
+    color: cornflowerblue;
+}
+
+.cartbookprice {
+    color: green;
+    font-size: 2em;
+}
+
+.cartbookactions {
+    display: flex;
+    align-items: center;
+}
+
+.delcartbook {
+    margin: 5px;
+    color: orangered;
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: 0 0 2px red;
+    border-radius: 5px;
+}
+
+.upperpanel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.workpanel {
+    display: flex;
+}
+
+@media screen and (max-width: 700px) {
+    .book {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pricingdetails, .ratingdetails {
+        text-align: left;
+    }
+
+    .namingdetails, .pricingdetails, .ratingdetails {
+        width: 90%;
+    }
+
+    .upperpanel {
+        flex-direction: column;
+    }
+}

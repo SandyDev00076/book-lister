@@ -5,9 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --title-color: rgb(82, 82, 82);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@font-face {
+  font-family: zrnic;
+  src: url(./assets/fonts/zrnic.woff);
+}
+
+* {
+  font-family: zrnic;
 }
