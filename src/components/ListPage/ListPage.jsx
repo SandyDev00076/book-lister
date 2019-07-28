@@ -3,8 +3,17 @@ import './ListPage.css';
 // import axios from 'axios';
 import books from '../../assets/books.json';
 import StarRatings from 'react-star-ratings';
-import { Button, Modal, Dropdown } from 'react-bootstrap';
+import { Button, Modal, Dropdown, Popover, OverlayTrigger } from 'react-bootstrap';
 import NavBarComponent from '../NavBar/NavBar';
+
+const checkoutPopover = (
+    <Popover id="popover-basic">
+        <Popover.Title as="h3">Checkout</Popover.Title>
+        <Popover.Content>
+            After clicking on this, you should be redirected to the payment and delivery options page!
+        </Popover.Content>
+    </Popover>
+);
 
 export default class ListPage extends Component {
     state = {
@@ -129,10 +138,12 @@ export default class ListPage extends Component {
                     <Modal.Footer>
                         <div className="cartfooter">
                             <Button variant="danger" onClick={this.hideCart}>Close</Button>
-                            <Button variant="success" onClick={this.checkOut} disabled={(this.state.cartCount === 0)}>
-                                <span>&#x20B9;{this.getTotalPrice()}</span>
-                                &nbsp;- Checkout
-                            </Button>
+                            <OverlayTrigger trigger="click" placement="right" overlay={checkoutPopover}>
+                                <Button variant="success" disabled={(this.state.cartCount === 0)}>
+                                    <span>&#x20B9;{this.getTotalPrice()}</span>
+                                    &nbsp;- Checkout
+                                </Button>
+                            </OverlayTrigger>
                         </div>
                     </Modal.Footer>
                 </Modal>
@@ -202,10 +213,6 @@ export default class ListPage extends Component {
 
     hideCart = () => {
         this.setState({ showCartFlag: false });
-    }
-
-    checkOut = () => {
-        this.hideCart();
     }
 
     getTotalPrice = () => {
