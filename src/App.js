@@ -9,8 +9,6 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={ListPage}></Route>
-        <Route path="/list" component={ListPage}></Route>
-        <Route path="/cart" component={CartComponent}></Route>
       </Switch>
     </Router>
   );
