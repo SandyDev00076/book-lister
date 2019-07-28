@@ -33,6 +33,7 @@ export default class ListPage extends Component {
                                 <Dropdown.Item onClick={() => this.sortBooksBy('title')}>Title</Dropdown.Item>
                                 <Dropdown.Item onClick={() => this.sortBooksBy('ratings')}>Ratings</Dropdown.Item>
                                 <Dropdown.Item onClick={() => this.sortBooksBy('authors')}>Authors</Dropdown.Item>
+                                <Dropdown.Item onClick={() => this.sortBooksBy('price')}>Price</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                         &nbsp;
@@ -228,6 +229,10 @@ export default class ListPage extends Component {
             break;
             case 'authors': {
                 sortedBooks = this.state.books.sort((a, b) => a.authors.toString().localeCompare(b.authors.toString()));
+            }
+            break;
+            case 'price': {
+                sortedBooks = this.state.books.sort((a, b) => a.price - b.price);
             }
             break;
             default: console.error('Invalid sorting parameter');
