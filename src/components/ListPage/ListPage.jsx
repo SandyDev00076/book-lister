@@ -18,7 +18,7 @@ export default class ListPage extends Component {
 
     render() {
         return (
-            <div className="listcontainer">
+            <div>
                 <NavBarComponent onSearch={this.searchAccordingTo} cartCount={this.state.cartCount} onShowCart={this.showCart}/>
                 <div className="upperpanel">
                     <span>
