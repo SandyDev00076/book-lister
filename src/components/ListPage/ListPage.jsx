@@ -31,7 +31,7 @@ export default class ListPage extends Component {
                 <NavBarComponent onSearch={this.searchAccordingTo} cartCount={this.state.cartCount} onShowCart={this.showCart}/>
                 <div className="upperpanel">
                     <span>
-                        Showing {this.state.offset*this.state.limit} - {(this.state.offset*this.state.limit) + 99} from {this.state.books.length}
+                        Showing {this.state.offset*this.state.limit} - {((this.state.offset*this.state.limit) + 99 > this.state.books.length) ? this.state.books.length : (this.state.offset*this.state.limit) + 99 } from {this.state.books.length}
                     </span>
                     <div className="workpanel">
                         <Dropdown>
